@@ -1,47 +1,90 @@
 {
   "components": [
     {
-      "type": "content",
-      "container": "main",
       "components": [
         {
-          "type": "row",
           "components": [
             {
-              "type": "col",
               "class": "col-md-12",
               "components": [
                 {
                   "data": "${todo}",
-                  "events": {},
+                  "events": {
+                    "cancel": [
+                      {
+                        "type": "back"
+                      }
+                    ],
+                    "submit": [
+                      {
+                        "error": [
+                          {
+                            "detail": "Unable to update ToDo",
+                            "severity": "error",
+                            "summary": "Error",
+                            "type": "notify"
+                          }
+                        ],
+                        "name": "ToDoBackend.UpdateItem",
+                        "parameters": [
+                          {
+                            "name": "todo",
+                            "value": "${todo}"
+                          },
+                          {
+                            "name": "id",
+                            "value": "${parameters.id}"
+                          }
+                        ],
+                        "then": [
+                          {
+                            "type": "back"
+                          }
+                        ],
+                        "type": "invoke"
+                      }
+                    ]
+                  },
                   "fields": [
                     {
-                      "property": "Completed",
+                      "disabled": true,
+                      "maxText": "cannot be more than",
+                      "minText": "cannot be less than",
+                      "property": "id",
                       "required": false,
-                      "title": "Completed",
-                      "type": "boolean"
-                    },
-                    {
-                      "property": "Id",
-                      "required": false,
+                      "requiredText": "is required",
                       "title": "Id",
                       "type": "integer"
                     },
                     {
-                      "property": "Order",
+                      "property": "title",
                       "required": false,
-                      "title": "Order",
-                      "type": "integer"
-                    },
-                    {
-                      "property": "Title",
-                      "required": false,
+                      "requiredText": "is required",
                       "title": "Title",
                       "type": "string"
                     },
                     {
-                      "property": "Url",
+                      "maxText": "cannot be more than",
+                      "minText": "cannot be less than",
+                      "property": "order",
                       "required": false,
+                      "requiredText": "is required",
+                      "title": "Order",
+                      "type": "integer"
+                    },
+                    {
+                      "defaultValue": "false",
+                      "property": "completed",
+                      "required": false,
+                      "requiredText": "is required",
+                      "title": "Completed",
+                      "type": "boolean"
+                    },
+                    {
+                      "disabled": true,
+                      "property": "url",
+                      "required": false,
+                      "requiredText": "is required",
                       "title": "Url",
                       "type": "string"
                     }
@@ -50,16 +93,39 @@
                   "type": "form",
                   "visible": "todo"
                 }
-              ]
+              ],
+              "type": "col"
             }
-          ]
+          ],
+          "type": "row"
         }
-      ]
+      ],
+      "container": "main",
+      "type": "content"
     }
   ],
   "events": {
-    "load": []
+    "load": [
+      {
+        "error": [],
+        "name": "ToDoBackend.GetItem",
+        "parameters": [
+          {
+            "name": "id",
+            "value": "${parameters.id}"
+          }
+        ],
+        "then": [
+          {
+            "name": "todo",
+            "type": "set",
+            "value": "${result}"
+          }
+        ],
+        "type": "invoke"
+      }
+    ]
   },
-  "name": "Edit To Do",
-  "layout": "Main"
+  "layout": "Main",
+  "name": "Edit To Do"
 }

@@ -31,6 +31,11 @@
   },
   "paths": {
     "todos": {
+      "delete": {
+        "operationId": "ZapAllTodos",
+        "parameters": [],
+        "responses": {}
+      },
       "get": {
         "operationId": "List",
         "parameters": [],
@@ -63,11 +68,60 @@
             }
           }
         }
+      }
+    },
+    "todos/{id}": {
+      "get": {
+        "operationId": "GetItem",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/ToDo"
+            }
+          }
+        }
       },
       "delete": {
-        "operationId": "ZapAllTodos",
-        "parameters": [],
+        "operationId": "DeleteItem",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "type": "integer"
+          }
+        ],
         "responses": {}
+      },
+      "patch": {
+        "operationId": "UpdateItem",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "todo",
+            "schema": {
+              "$ref": "#/definitions/ToDo"
+            }
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/ToDo"
+            }
+          }
+        }
       }
     }
   },

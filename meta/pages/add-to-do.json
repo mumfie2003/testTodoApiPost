@@ -1,14 +1,10 @@
 {
   "components": [
     {
-      "type": "content",
-      "container": "main",
       "components": [
         {
-          "type": "row",
           "components": [
             {
-              "type": "col",
               "class": "col-md-12",
               "components": [
                 {
@@ -47,49 +43,48 @@
                   },
                   "fields": [
                     {
-                      "property": "Completed",
+                      "property": "title",
                       "required": false,
-                      "title": "Completed",
-                      "type": "boolean"
-                    },
-                    {
-                      "property": "Id",
-                      "required": false,
-                      "title": "Id",
-                      "type": "integer"
-                    },
-                    {
-                      "property": "Order",
-                      "required": false,
-                      "title": "Order",
-                      "type": "integer"
-                    },
-                    {
-                      "property": "Title",
-                      "required": false,
+                      "requiredText": "is required",
                       "title": "Title",
                       "type": "string"
                     },
                     {
-                      "property": "Url",
+                      "defaultValue": "1",
+                      "maxText": "cannot be more than",
+                      "minText": "cannot be less than",
+                      "property": "order",
                       "required": false,
-                      "title": "Url",
-                      "type": "string"
+                      "requiredText": "is required",
+                      "title": "Order",
+                      "type": "integer"
+                    },
+                    {
+                      "defaultValue": "false",
+                      "property": "completed",
+                      "required": false,
+                      "requiredText": "is required",
+                      "title": "Completed",
+                      "type": "boolean"
                     }
                   ],
                   "name": "form0",
                   "type": "form"
                 }
-              ]
+              ],
+              "type": "col"
             }
-          ]
+          ],
+          "type": "row"
         }
-      ]
+      ],
+      "container": "main",
+      "type": "content"
     }
   ],
   "events": {
     "load": []
   },
-  "name": "Add To Do",
-  "layout": "Main"
+  "layout": "Main",
+  "name": "Add To Do"
 }

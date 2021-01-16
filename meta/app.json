@@ -1,6 +1,7 @@
 {
   "dataSources": [
-    "ToDoBackend"
+    "ToDoBackend",
+    "Spotify"
   ],
   "generator": "@radzen/angular-generator",
   "https": false,
@@ -12,14 +13,18 @@
   "logo": "",
   "name": "TestApiPostAngular",
   "navigation": [
-    "test"
+    "test",
+    "ToDo"
   ],
   "pages": [
-    "test"
+    "test",
+    "ToDo",
+    "Add ToDo",
+    "Edit ToDo"
   ],
   "serverLang": "cs",
   "serverProject": true,
   "serverVersion": "3",
-  "startPage": "test",
+  "startPage": "ToDo",
   "theme": "default"
 }

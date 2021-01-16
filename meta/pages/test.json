@@ -218,6 +218,6 @@
       }
     ]
   },
-  "layout": "Blank",
+  "layout": "Main",
   "name": "test"
 }
