@@ -1,0 +1,25 @@
+{
+  "dataSources": [
+    "ToDoBackend"
+  ],
+  "generator": "@radzen/angular-generator",
+  "https": false,
+  "layouts": [
+    "Login",
+    "Main",
+    "Blank"
+  ],
+  "logo": "",
+  "name": "TestApiPostAngular",
+  "navigation": [
+    "test"
+  ],
+  "pages": [
+    "test"
+  ],
+  "serverLang": "cs",
+  "serverProject": true,
+  "serverVersion": "3",
+  "startPage": "test",
+  "theme": "default"
+}

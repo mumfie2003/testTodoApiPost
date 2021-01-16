@@ -1,0 +1,32 @@
+{
+  "components": [
+    {
+      "components": [
+        {
+          "name": "main",
+          "type": "content-container"
+        }
+      ],
+      "name": "card0",
+      "style": {
+        "marginTop": "0"
+      },
+      "type": "card"
+    },
+    {
+      "name": "label0",
+      "style": {
+        "color": "#ff6d41",
+        "fontStyle": "italic",
+        "marginTop": "",
+        "paddingLeft": "25px",
+        "paddingRight": "25px",
+        "textAlign": "center",
+        "width": "100%"
+      },
+      "text": "API Test using :https://dotnetcore-todo-webapi.herokuapp.com/v1/todos, Copyright &copy; 2021",
+      "type": "label"
+    }
+  ],
+  "name": "Blank"
+}

@@ -1,0 +1,77 @@
+{
+  "basePath": "/v1",
+  "definitions": {
+    "ToDo": {
+      "properties": {
+        "completed": {
+          "type": "boolean"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "order": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "title": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "host": "dotnetcore-todo-webapi.herokuapp.com",
+  "info": {
+    "title": "ToDoBackend",
+    "x-withCredentials": false,
+    "x-type": "rest"
+  },
+  "paths": {
+    "todos": {
+      "get": {
+        "operationId": "List",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/ToDo"
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "CreateToDo",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "ToDo",
+            "schema": {
+              "$ref": "#/definitions/ToDo"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/ToDo"
+            }
+          }
+        }
+      },
+      "delete": {
+        "operationId": "ZapAllTodos",
+        "parameters": [],
+        "responses": {}
+      }
+    }
+  },
+  "schemes": [
+    "https"
+  ]
+}

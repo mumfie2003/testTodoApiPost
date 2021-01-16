@@ -1,0 +1,95 @@
+{
+  "components": [
+    {
+      "type": "content",
+      "container": "main",
+      "components": [
+        {
+          "type": "row",
+          "components": [
+            {
+              "type": "col",
+              "class": "col-md-12",
+              "components": [
+                {
+                  "data": "",
+                  "events": {
+                    "cancel": [
+                      {
+                        "type": "back"
+                      }
+                    ],
+                    "submit": [
+                      {
+                        "error": [
+                          {
+                            "detail": "Unable to create new ToDo!",
+                            "severity": "error",
+                            "summary": "Error",
+                            "type": "notify"
+                          }
+                        ],
+                        "name": "ToDoBackend.CreateToDo",
+                        "parameters": [
+                          {
+                            "name": "ToDo",
+                            "value": "${event}"
+                          }
+                        ],
+                        "then": [
+                          {
+                            "type": "back"
+                          }
+                        ],
+                        "type": "invoke"
+                      }
+                    ]
+                  },
+                  "fields": [
+                    {
+                      "property": "Completed",
+                      "required": false,
+                      "title": "Completed",
+                      "type": "boolean"
+                    },
+                    {
+                      "property": "Id",
+                      "required": false,
+                      "title": "Id",
+                      "type": "integer"
+                    },
+                    {
+                      "property": "Order",
+                      "required": false,
+                      "title": "Order",
+                      "type": "integer"
+                    },
+                    {
+                      "property": "Title",
+                      "required": false,
+                      "title": "Title",
+                      "type": "string"
+                    },
+                    {
+                      "property": "Url",
+                      "required": false,
+                      "title": "Url",
+                      "type": "string"
+                    }
+                  ],
+                  "name": "form0",
+                  "type": "form"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "events": {
+    "load": []
+  },
+  "name": "Add To Do",
+  "layout": "Main"
+}

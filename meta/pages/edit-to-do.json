@@ -1,0 +1,65 @@
+{
+  "components": [
+    {
+      "type": "content",
+      "container": "main",
+      "components": [
+        {
+          "type": "row",
+          "components": [
+            {
+              "type": "col",
+              "class": "col-md-12",
+              "components": [
+                {
+                  "data": "${todo}",
+                  "events": {},
+                  "fields": [
+                    {
+                      "property": "Completed",
+                      "required": false,
+                      "title": "Completed",
+                      "type": "boolean"
+                    },
+                    {
+                      "property": "Id",
+                      "required": false,
+                      "title": "Id",
+                      "type": "integer"
+                    },
+                    {
+                      "property": "Order",
+                      "required": false,
+                      "title": "Order",
+                      "type": "integer"
+                    },
+                    {
+                      "property": "Title",
+                      "required": false,
+                      "title": "Title",
+                      "type": "string"
+                    },
+                    {
+                      "property": "Url",
+                      "required": false,
+                      "title": "Url",
+                      "type": "string"
+                    }
+                  ],
+                  "name": "form0",
+                  "type": "form",
+                  "visible": "todo"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "events": {
+    "load": []
+  },
+  "name": "Edit To Do",
+  "layout": "Main"
+}
